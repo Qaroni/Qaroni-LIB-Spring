@@ -1,0 +1,27 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/endpoint",
+    "headers": {
+      "Content-Type": {
+        "equalTo": "application/json"
+      }
+    },
+    "bodyPatterns": [
+      {
+        "equalToJson": {
+          "data": "value"
+        }
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "response": "ok"
+    }
+  }
+}
