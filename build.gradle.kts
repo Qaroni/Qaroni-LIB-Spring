@@ -1,18 +1,31 @@
 plugins {
 	java
+	id("java-library")
+	id("maven-publish")
 	id("org.springframework.boot") version "3.2.5"
 	id("io.spring.dependency-management") version "1.1.4"
 }
 
 group = "com.qaroni"
 version = "0.0.1"
+description = "Spring boot library for Qaroni projects"
 
 java {
 	sourceCompatibility = JavaVersion.VERSION_17
+	withSourcesJar()
 }
 
 repositories {
 	mavenCentral()
+}
+
+publishing {
+	publications {
+		create<MavenPublication>("mavenJava") {
+			from(components["java"])
+			artifactId = "qaroni-lib-spring"
+		}
+	}
 }
 
 dependencies {
