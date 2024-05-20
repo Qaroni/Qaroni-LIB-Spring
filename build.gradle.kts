@@ -28,10 +28,12 @@ java {
 	withSourcesJar()
 }
 
-publishing {
-	publications {
-		create<MavenPublication>("mavenJava") {
-			from(components["java"])
+afterEvaluate {
+	publishing {
+		publications {
+			create<MavenPublication>("mavenJava") {
+				from(components["java"])
+			}
 		}
 	}
 }
