@@ -1,1 +1,1 @@
-rootProject.name = "libs"
+rootProject.name = "qaroni-spring-lib"
