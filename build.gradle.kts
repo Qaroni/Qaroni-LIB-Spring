@@ -10,22 +10,8 @@ group = "com.qaroni"
 version = "0.0.1"
 description = "Spring boot library for Qaroni projects"
 
-java {
-	sourceCompatibility = JavaVersion.VERSION_17
-	withSourcesJar()
-}
-
 repositories {
 	mavenCentral()
-}
-
-publishing {
-	publications {
-		create<MavenPublication>("mavenJava") {
-			from(components["java"])
-			artifactId = "qaroni-lib-spring"
-		}
-	}
 }
 
 dependencies {
@@ -35,6 +21,19 @@ dependencies {
 	implementation("org.springframework.cloud:spring-cloud-contract-wiremock:4.1.2")
 
 	testImplementation("io.rest-assured:rest-assured:5.4.0")
+}
+
+java {
+	sourceCompatibility = JavaVersion.VERSION_17
+	withSourcesJar()
+}
+
+publishing {
+	publications {
+		create<MavenPublication>("mavenJava") {
+			from(components["java"])
+		}
+	}
 }
 
 tasks.withType<Test> {
