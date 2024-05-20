@@ -39,3 +39,7 @@ publishing {
 tasks.withType<Test> {
 	useJUnitPlatform()
 }
+
+tasks.wrapper {
+	gradleVersion = "8.7"
+}
